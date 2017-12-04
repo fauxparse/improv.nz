@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.4.2
+  Exclude:
+    - 'bin/*'
+    - 'db/schema.rb'
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Metrics/LineLength:
+  Max: 80
+  IgnoredPatterns: ['\A\s*#']
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/**/*'
+
+Style/Documentation:
+  Enabled: false
