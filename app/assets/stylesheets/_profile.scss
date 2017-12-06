@@ -1,0 +1,82 @@
+.hero {
+  @include padding(0 null $base-spacing);
+
+  .title {
+    &::before {
+      background: $accent-color;
+      content: '';
+      display: block;
+      height: 0.5em;
+      width: 2 * $base-spacing;
+    }
+  }
+
+  h1 {
+    font-size: ms(6);
+    font-weight: $extra-light-font-weight;
+    margin: 0 -0.08em;
+    text-rendering: optimizeLegibility;
+  }
+
+  h2 {
+    font-size: ms(0);
+    font-weight: $bold-font-weight;
+    letter-spacing: 0.2em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  @include breakpoint($medium-screen) {
+    h1 {
+      font-size: interpolate(100vw, $medium-screen, $large-screen, ms(8), ms(12));
+    }
+
+    h2 {
+      font-size: ms(1);
+    }
+  }
+
+  @include breakpoint($large-screen) {
+    h1 {
+      font-size: ms(12);
+    }
+
+    h2 {
+      font-size: ms(2);
+    }
+  }
+}
+
+.intro {
+  .text {
+    line-height: ms(4);
+
+    p:first-of-type {
+      font-size: ms(2);
+      line-height: ms(4);
+    }
+  }
+
+  .links {
+    color: $secondary-color;
+
+    ul {
+      @include list;
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint($medium-screen) {
+    display: flex;
+    align-items: flex-start;
+
+    .text {
+      flex: 3;
+    }
+
+    .links {
+      flex: 1;
+      margin: 0 0 $base-spacing $base-spacing;
+    }
+  }
+}

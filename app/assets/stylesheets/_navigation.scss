@@ -1,0 +1,80 @@
+.main-navigation {
+  @include smooth;
+  @include responsive-padding;
+  @include padding(0 null);
+
+  align-items: center;
+  background-color: $dark-grey;
+  color: $white;
+  display: flex;
+
+  &::after {
+    content: '';
+    flex: 1;
+  }
+
+  .logo {
+    align-items: center;
+    color: $white;
+    display: flex;
+    font-weight: $bold-font-weight;
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0 (-$small-spacing);
+    outline: none;
+    padding: 0.5rem $small-spacing;
+    text-decoration: none;
+
+    svg {
+      margin-right: $small-spacing;
+    }
+
+    span:nth-of-type(2) {
+      color: $accent-color;
+    }
+
+    &:hover {
+      color: white;
+      background: $black;
+    }
+
+    @include breakpoint($medium-screen) {
+      margin-left: calc(#{$small-spacing} * -2 - 1.5rem);
+    }
+  }
+
+  .search {
+    align-items: center;
+    display: flex;
+    margin-left: $small-spacing;
+    padding: 0 $small-spacing;
+    order: 1;
+  }
+
+  .current-user {
+    align-items: center;
+    border-left: $base-border;
+    display: none;
+    margin-right: -$small-spacing;
+    order: 1;
+    padding: 0 $small-spacing;
+
+    .name {
+      margin: 0 $small-spacing;
+    }
+
+    @include breakpoint($medium-screen) {
+      display: flex;
+    }
+  }
+}
+
+@include breakpoint($medium-screen) {
+  body {
+    padding-top: $navigation-height;
+  }
+
+  .main-navigation {
+    @include position(fixed, 0 0 null 0);
+  }
+}

@@ -1,0 +1,17 @@
+.icon {
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 1.5em;
+  line-height: 1em;
+
+  path {
+    stroke: currentColor;
+    stroke-width: 2px;
+    fill: none;
+  }
+
+  circle {
+    fill: currentColor;
+  }
+}

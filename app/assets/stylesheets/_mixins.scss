@@ -1,0 +1,20 @@
+@function interpolate($a, $a1, $a2, $b1, $b2) {
+  @return calc(#{$b1} + #{strip-unit($b2 - $b1)} * (#{$a} - #{$a1}) / #{strip-unit($a2 - $a1)});
+}
+
+@mixin smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin responsive-padding {
+  padding: $small-spacing $base-spacing;
+
+  @include breakpoint($medium-screen) {
+    @include padding(null $keyline);
+  }
+
+  @include breakpoint(#{$large-screen + $keyline * 2}) {
+    @include padding(null calc((100vw - #{$large-screen}) / 2));
+  }
+}
