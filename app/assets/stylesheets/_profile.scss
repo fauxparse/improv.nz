@@ -1,6 +1,13 @@
 .hero {
   @include padding(0 null $base-spacing);
 
+  picture {
+    background: $light-grey;
+    display: block;
+    margin: 0 (-$base-spacing);
+    padding-top: percentage(1 / $cinematic);
+  }
+
   .title {
     &::before {
       background: $accent-color;
